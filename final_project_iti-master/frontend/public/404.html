@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      const currentLocation = window.location;
+      const base = currentLocation.pathname
+        .split("/")
+        .slice(0, 2)
+        .join("/");
+
+      const route = currentLocation.pathname.slice(base.length);
+
+      currentLocation.replace(
+        base + "/?/" + route.replace(/^\//, "") +
+        currentLocation.search.replace("?", "&") +
+        currentLocation.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
