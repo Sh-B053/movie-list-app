@@ -5,20 +5,18 @@
     <meta charset="utf-8" />
     <title>Redirecting...</title>
     <script>
-      const segmentCount = 1;
-      const location = window.location;
-      const base = location.pathname
+      const currentLocation = window.location;
+      const base = currentLocation.pathname
         .split("/")
-        .slice(0, 1 + segmentCount)
+        .slice(0, 2)
         .join("/");
 
-      const route = location.pathname
-        .slice(base.length);
+      const route = currentLocation.pathname.slice(base.length);
 
-      location.replace(
+      currentLocation.replace(
         base + "/?/" + route.replace(/^\//, "") +
-        location.search.replace("?", "&") +
-        location.hash
+        currentLocation.search.replace("?", "&") +
+        currentLocation.hash
       );
     </script>
   </head>
