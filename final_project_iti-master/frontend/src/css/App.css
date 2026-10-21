@@ -6,3 +6,44 @@
   display: flex;
   flex-direction: column;
 }
+
+/* ---------- Movie details page ---------- */
+/* Its layout uses inline styles, so a few rules need !important */
+.movie-details img {
+  max-width: min(300px, 100%) !important;
+  height: auto;
+}
+
+.movie-details iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.movie-details p {
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-details {
+    padding: 0.5rem !important;
+  }
+
+  .movie-details h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-content {
+    padding: 0.75rem;
+  }
+}

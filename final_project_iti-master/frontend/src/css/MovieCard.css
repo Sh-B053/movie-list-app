@@ -94,6 +94,7 @@
 .movie-info h3 {
   font-size: 1rem;
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .movie-info p {
@@ -107,6 +108,7 @@
   margin-top: auto;
 }
 
+/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .movie-card {
     font-size: 0.9rem;
@@ -120,5 +122,40 @@
     width: 32px;
     height: 32px;
     font-size: 1.2rem;
+  }
+}
+
+/* Touch screens have no hover, so the favorite button (inside the hover
+   overlay) was unreachable. Keep it visible there. */
+@media (hover: none) {
+  .movie-card:hover {
+    transform: none;
+  }
+
+  .movie-overlay {
+    opacity: 1;
+    background: none;
+    pointer-events: none;
+  }
+
+  .favorite-btn {
+    pointer-events: auto;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .movie-info p {
+    font-size: 0.8rem;
+  }
+
+  .favorite-btn {
+    top: 0.5rem;
+    right: 0.5rem;
   }
 }
